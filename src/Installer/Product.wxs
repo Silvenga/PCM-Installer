@@ -4,7 +4,7 @@
 
   <?include Constants.wxi ?>
 
-  <Product Id="*" Name="Processor Counter Monitor (PCM)" Language="1033" Version="$(var.PackageVersion)-$(var.PcmVersion)" Manufacturer="Silvenga"
+  <Product Id="*" Name="Processor Counter Monitor (PCM) $(var.PcmVersion)" Language="1033" Version="$(var.PackageVersion)" Manufacturer="Silvenga"
            UpgradeCode="cdac71a2-618c-4449-be28-562424b59a92">
 
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
