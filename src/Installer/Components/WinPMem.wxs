@@ -1,15 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Fragment>
-        <DirectoryRef Id="INSTALLFOLDER">
-            <Component Id="cmpF8B70D0A6204F70671C0ADA7ACD61562" Guid="1B723515-11A2-4B89-A20F-56000FBB46E3">
-                <File Id="fil91F36D82A12C2C8633C5EA62865670BE" KeyPath="yes" Source="$(var.PcmWinPMemSourceDir)\winpmem_x64.sys" />
-            </Component>
-        </DirectoryRef>
-    </Fragment>
-    <Fragment>
-        <ComponentGroup Id="C.WinPMem">
-            <ComponentRef Id="cmpF8B70D0A6204F70671C0ADA7ACD61562" />
-        </ComponentGroup>
-    </Fragment>
+
+  <?include ..\Constants.wxi ?>
+
+  <Fragment>
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="cmpF8B70D0A6204F70671C0ADA7ACD61562" Guid="1B723515-11A2-4B89-A20F-56000FBB46E3">
+        <File Id="fil91F36D82A12C2C8633C5EA62865670BE" KeyPath="yes"
+              Source="$(var.PcmWinPMemSourceDir)\winpmem_x64.sys" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <ComponentGroup Id="C.WinPMem">
+      <ComponentRef Id="cmpF8B70D0A6204F70671C0ADA7ACD61562" />
+    </ComponentGroup>
+  </Fragment>
 </Wix>
