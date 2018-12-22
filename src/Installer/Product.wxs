@@ -17,11 +17,15 @@
       <ComponentGroupRef Id="C.WinPMem" />
       <ComponentGroupRef Id="C.Pcm" />
     </Feature>
+
+    <UIRef Id="WixUI_Minimal" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.PcmVendorDir)\license-combined.rtf" />
+
   </Product>
 
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
-      <Directory Id="ProgramFilesFolder">
+      <Directory Id="ProgramFiles64Folder">
         <Directory Id="INSTALLFOLDER" Name="Processor Counter Monitor" />
       </Directory>
     </Directory>
