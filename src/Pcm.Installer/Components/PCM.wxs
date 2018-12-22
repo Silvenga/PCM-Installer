@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLFOLDER">
+            <Component Id="cmp128499840387F461DC54A472A4249FBA" Guid="F53B97F7-BCB2-49EE-87E8-B952AE0331EC">
+                <File Id="fil8B670BD9622CC5A01CE16CB15241AC97" KeyPath="yes" Source="$(var.PcmSourceDir)\pcm-core.exe" />
+            </Component>
+            <Component Id="cmp7E09A2B85300E0913D3B71EE43F03EB6" Guid="ACC01FEF-D178-4F4B-948E-67A330ACE130">
+                <File Id="fil729C795F14E09A46281BBD5270552587" KeyPath="yes" Source="$(var.PcmSourceDir)\PCM-Lib.dll" />
+            </Component>
+            <Component Id="cmp81A5BC7AA412BCAA421CECFBC9E73ACB" Guid="642CBC28-274A-42A4-A22B-EFC44CBF4254">
+                <File Id="fil6C765D5C81AAEFD9291E6F3FBAC50EEC" KeyPath="yes" Source="$(var.PcmSourceDir)\pcm-memory.exe" />
+            </Component>
+            <Component Id="cmpED1A54CD4E79C58171AB8EABAE092477" Guid="3E63FD96-6F5D-4CE3-8041-4DB01BBA7B41">
+                <File Id="fil6B82A688D1C601B782501F8D423A4EC3" KeyPath="yes" Source="$(var.PcmSourceDir)\pcm-msr.exe" />
+            </Component>
+            <Component Id="cmpA6C262D049D8B8C4A8179E8A90768F83" Guid="FDAF22FC-1D83-41C9-8379-50F5107D61F4">
+                <File Id="fil5AF12E8895758D90CD028E302614BF2F" KeyPath="yes" Source="$(var.PcmSourceDir)\pcm-numa.exe" />
+            </Component>
+            <Component Id="cmpAE073442A4E0DDEFC294887009C20C90" Guid="6A408BDD-7031-48E1-89AD-846945B4375C">
+                <File Id="fil446246D0F497B917C8817FF08B7B67F1" KeyPath="yes" Source="$(var.PcmSourceDir)\pcm-pcie.exe" />
+            </Component>
+            <Component Id="cmp2B5AC87DD6521F6FF8EE1E4CD942FAFD" Guid="4318FC51-D6C9-46BF-9217-7E77BDF90FF3">
+                <File Id="filED69D2C3E1F2465EDE242B9DA9605599" KeyPath="yes" Source="$(var.PcmSourceDir)\pcm-power.exe" />
+            </Component>
+            <Component Id="cmp9015374C68A32DD397E6393A86D0F340" Guid="C129D9BD-EF3F-4F88-A29F-C895B50332B4">
+                <File Id="fil910AF426D2EB33697736D36C364B48A3" KeyPath="yes" Source="$(var.PcmSourceDir)\PCM-Service.exe" />
+            </Component>
+            <Component Id="cmpCBC54AEF1E9719DDA0473E78DCFA46ED" Guid="C7048D1B-13ED-408F-B140-7B25A36E43B0">
+                <File Id="filFF5A53BA76761BE73018B1FF1F1EAB91" KeyPath="yes" Source="$(var.PcmSourceDir)\pcm-tsx.exe" />
+            </Component>
+            <Component Id="cmp2B091B003A3DF58D6AE20BFF87EC4CCC" Guid="40697155-A088-4D19-A58A-CC3D0AA48349">
+                <File Id="fil659E0FBDEAD1164B75CABC22DE60CF10" KeyPath="yes" Source="$(var.PcmSourceDir)\pcm.exe" />
+            </Component>
+            <Component Id="cmp14DF066E2C8AC1CE884ADAAA3FA71A40" Guid="1F7BB9DC-CFFB-4B58-BA72-5BCFD22C4C7E">
+                <File Id="fil1B579E1F7A796EA379DE30E7969F0AD0" KeyPath="yes" Source="$(var.PcmSourceDir)\pcm.exp" />
+            </Component>
+            <Component Id="cmp40FF1C9CC29E85A849E1A340BAECAFB7" Guid="64B15CA8-AD09-41D3-AF21-0C04723DD489">
+                <File Id="fil2B02F9F54B2A2110FF9DAEA5D1C1B329" KeyPath="yes" Source="$(var.PcmSourceDir)\pcm.lib" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="C.Pcm">
+            <ComponentRef Id="cmp128499840387F461DC54A472A4249FBA" />
+            <ComponentRef Id="cmp7E09A2B85300E0913D3B71EE43F03EB6" />
+            <ComponentRef Id="cmp81A5BC7AA412BCAA421CECFBC9E73ACB" />
+            <ComponentRef Id="cmpED1A54CD4E79C58171AB8EABAE092477" />
+            <ComponentRef Id="cmpA6C262D049D8B8C4A8179E8A90768F83" />
+            <ComponentRef Id="cmpAE073442A4E0DDEFC294887009C20C90" />
+            <ComponentRef Id="cmp2B5AC87DD6521F6FF8EE1E4CD942FAFD" />
+            <ComponentRef Id="cmp9015374C68A32DD397E6393A86D0F340" />
+            <ComponentRef Id="cmpCBC54AEF1E9719DDA0473E78DCFA46ED" />
+            <ComponentRef Id="cmp2B091B003A3DF58D6AE20BFF87EC4CCC" />
+            <ComponentRef Id="cmp14DF066E2C8AC1CE884ADAAA3FA71A40" />
+            <ComponentRef Id="cmp40FF1C9CC29E85A849E1A340BAECAFB7" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

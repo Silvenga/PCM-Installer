@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLFOLDER">
+            <Component Id="cmp473D8FD4289B2DC7DD963C137596931E" Guid="6FBE0AC0-F8AE-4652-8E63-68873981CFFB">
+                <File Id="fil05E9DBAB56AFB65DFA14E7FBE576D231" KeyPath="yes" Source="$(var.PcmWinRing0SourceDir)\WinRing0.dll" />
+            </Component>
+            <Component Id="cmp37E87F3DC66ED3723C4BC835C10DC37E" Guid="8BB1D1C5-E3A4-4F11-8C08-B3CEBE082C11">
+                <File Id="fil0BD16051146725B94AC55E01918DCE70" KeyPath="yes" Source="$(var.PcmWinRing0SourceDir)\WinRing0.sys" />
+            </Component>
+            <Component Id="cmp3D3C7E20E0C910DEEEB63FA89DFF7577" Guid="F92A0E51-166B-4314-85B3-E49971508632">
+                <File Id="fil8583D29B9F6D0E856B2C5B9FD374A16D" KeyPath="yes" Source="$(var.PcmWinRing0SourceDir)\WinRing0x64.dll" />
+            </Component>
+            <Component Id="cmp498980887CD78A32FF5C28AB2B723926" Guid="AAFD0512-955E-4187-99A7-3A1954AA37A9">
+                <File Id="filCF534631A0CBC0B8BAC3FD66B14E26E0" KeyPath="yes" Source="$(var.PcmWinRing0SourceDir)\WinRing0x64.sys" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="C.WinRing0">
+            <ComponentRef Id="cmp473D8FD4289B2DC7DD963C137596931E" />
+            <ComponentRef Id="cmp37E87F3DC66ED3723C4BC835C10DC37E" />
+            <ComponentRef Id="cmp3D3C7E20E0C910DEEEB63FA89DFF7577" />
+            <ComponentRef Id="cmp498980887CD78A32FF5C28AB2B723926" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

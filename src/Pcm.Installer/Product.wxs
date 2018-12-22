@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+
+  <?include Constants.wxi ?>
+
+  <Product Id="*" Name="Processor Counter Monitor (PCM)" Language="1033" Version="1.0.0.0" Manufacturer="Silvenga"
+           UpgradeCode="cdac71a2-618c-4449-be28-562424b59a92">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate />
+
+    <Feature Id="ProductFeature" Title="Pcm" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Processor Counter Monitor" />
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <ComponentRef Id="C.WinRing0" />
+      <ComponentRef Id="C.WinPMem" />
+      <ComponentRef Id="C.Pcm" />
+    </ComponentGroup>
+  </Fragment>
+</Wix>

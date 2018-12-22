@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Include>
+  <?define PcmVersion = "201812.3" ?>
+  <?define PackageVersion = "1.0.0" ?>
+  <?define PcmVendorDir = "$(var.SolutionDir)vendor" ?>
+  <?define PcmSourceDir = "$(var.PcmVendorDir)\pcm\x64\Release" ?>
+  <?define PcmWinPMemSourceDir = "$(var.PcmVendorDir)\WinPMem" ?>
+  <?define PcmWinRing0SourceDir = "$(var.PcmVendorDir)\WinRing0" ?>
+</Include>
