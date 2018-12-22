@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 
   <?include ..\Constants.wxi ?>
 
@@ -29,6 +29,27 @@
       </Component>
       <Component Id="cmp9015374C68A32DD397E6393A86D0F340" Guid="C129D9BD-EF3F-4F88-A29F-C895B50332B4">
         <File Id="fil910AF426D2EB33697736D36C364B48A3" KeyPath="yes" Source="$(var.PcmSourceDir)\PCM-Service.exe" />
+        <?define Name="PCMService" ?>
+        <ServiceInstall Id="EnsureService"
+                        Account="LocalSystem"
+                        ErrorControl="normal"
+                        Name="$(var.Name)"
+                        Start="auto"
+                        Type="ownProcess"
+                        Vital="yes"
+                        Description="This service provides performance counters for perfmon to show hardware events over time such as Clockticks, Instruction Retired, Cache Misses and Memory Bandwidth."
+                        DisplayName="Processor Counter Monitor Service">
+        </ServiceInstall>
+        <util:ServiceConfig FirstFailureActionType="restart"
+                            SecondFailureActionType="restart"
+                            ThirdFailureActionType="none"
+                            ServiceName="$(var.Name)" />
+        <ServiceControl Id="ControlService"
+                        Name="$(var.Name)"
+                        Wait="yes"
+                        Start="install"
+                        Stop="both"
+                        Remove="uninstall" />
       </Component>
       <Component Id="cmpCBC54AEF1E9719DDA0473E78DCFA46ED" Guid="C7048D1B-13ED-408F-B140-7B25A36E43B0">
         <File Id="filFF5A53BA76761BE73018B1FF1F1EAB91" KeyPath="yes" Source="$(var.PcmSourceDir)\pcm-tsx.exe" />
