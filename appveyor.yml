@@ -1,0 +1,13 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+before_build:
+- ps: >-
+    git submodule update --init --recursive
+
+    msbuild "vendor\pcm\pcm-all.sln" /m /p:Configuration=Release /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+build:
+  project: Pcm.sln
+  parallel: true
+  verbosity: minimal
+artifacts:
+- path: src\Installer\bin\x64\Debug\Installer.msi
